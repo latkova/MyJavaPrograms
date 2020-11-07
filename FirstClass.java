@@ -5,7 +5,7 @@ package com.company;
 // compute the quantity of 10-digit numbers, which have at least 2 identical digits
 //
 
-        public class Combinatorics_one {
+        public class CombinatoricsOne {
             public static void main(String[] args) {
 
                 //Сompute the total quantity of 10-digit numbers
