@@ -1,28 +1,40 @@
-public class FirstClass<res> {
-    public static void main(String[] args) {
+package com.company;
 
-        //exponentiation
-        int number1 = 9;
-        long exp10pow9 = (long) Math.pow(10,
-                9);
-        long Quantity10DigitNumbers = 9 * exp10pow9;
+//Combinatorics Task 1
+//
+// compute the quantity of 10-digit numbers, which have at least 2 identical digits
+//
 
-        System.out.println("The quantity of 10-digit numbers = 9*10 to the power of 9 = " + Quantity10DigitNumbers);
+        public class Combinatorics_one {
+            public static void main(String[] args) {
 
-        //calculation of the factorial of number 9
+                //Сompute the total quantity of 10-digit numbers
 
-        int factorial9 = 1;
-        int i = 1;
-        while (i <= 9) {
-            factorial9 *= i;
-            i++;
-        }
-        System.out.println("The quantity of 10-digit numbers, which have different numerals = 9*9! = " + 9 * factorial9);
+                long exponent = (long) Math.pow(10,
+                        9);
+                long total_quant = 9 * exponent;
 
-        //calculation of the quantity of 10-digit numbers, which have at least 2 identical numerals
-        long Quantity10DigitNumber2ident = Quantity10DigitNumbers - 9 * factorial9;
-        System.out.println("The quantity of 10-digit numbers, which have at least 2 identical numerals = " + Quantity10DigitNumber2ident);
+                System.out.println("Total quantity of 10-digit numbers = 9*10 to the power of 9 = " + total_quant);
 
-    }
+                /* Compute the quantity of 10-digit numbers, which have different digits
+                       factorial 9! to be computed
+                */
 
+                int diff_quant = 1;
+                int i = 1;
+                while (i <= 9) {
+                    diff_quant *= i;
+                    i++;
+                }
+                System.out.println("The quantity of 10-digit numbers, which have different digits = 9*9! = " + 9 * diff_quant);
+
+            /* compute the quantity of 10-digit numbers, which have at least 2 identical digits
+                to solve the task - from the total quantity of 10-digit numbers we should deduct
+                the quantity of 10-digit numbers, which have different digits
+             */
+                
+                long identic_quant = total_quant - 9 * diff_quant;
+                System.out.println("The quantity of 10-digit numbers, which have at least 2 identical digits = " + identic_quant);
+
+            }
 }
